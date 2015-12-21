@@ -18,7 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+PATCHES=( "${FILESDIR}/${P}-p8platform.patch" )
+
 DEPEND="
+	dev-libs/libp8-platform
 	media-tv/kodi
 	media-libs/kodiplatform
 	"
