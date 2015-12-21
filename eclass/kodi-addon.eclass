@@ -13,10 +13,23 @@ inherit multilib cmake-utils
 
 case "${EAPI:-0}" in
 	4|5)
-		EXPORT_FUNCTIONS src_configure
+		EXPORT_FUNCTIONS src_prepare src_configure
 		;;
 	*) die "EAPI=${EAPI} is not supported" ;;
 esac
+
+# @FUNCTION: kodi-addon_src_prepare
+# @DESCRIPTION:
+# Prepare Kodi addon sources prior to configure
+kodi-addon_src_prepare() {
+
+	cmake-utils_src_prepare
+
+	einfo Fixing up reference from platform to p8-platform in find_package\(\) calls in CMakeLists.txt...
+
+	[[ -e ${S}/CMakeLists.txt ]] && \
+		sed -i 's/find_package(platform REQUIRED)/find_package(p8-platform REQUIRED)/' ${S}/CMakeLists.txt
+}
 
 # @FUNCTION: kodi-addon_src_configure
 # @DESCRIPTION:
