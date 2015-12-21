@@ -1,0 +1,60 @@
+diff -ruN kodi-pvr-iptvsimple-9999.orig/CMakeLists.txt kodi-pvr-iptvsimple-9999/CMakeLists.txt
+--- kodi-pvr-iptvsimple-9999.orig/CMakeLists.txt	2015-12-21 02:02:12.635846403 +0100
++++ kodi-pvr-iptvsimple-9999/CMakeLists.txt	2015-12-21 02:02:28.632048120 +0100
+@@ -6,7 +6,7 @@
+ 
+ find_package(kodi REQUIRED)
+ find_package(kodiplatform REQUIRED)
+-find_package(platform REQUIRED)
++find_package(p8-platform REQUIRED)
+ find_package(ZLIB REQUIRED)
+ 
+ include_directories(${kodiplatform_INCLUDE_DIRS}
+diff -ruN kodi-pvr-iptvsimple-9999.orig/src/client.cpp kodi-pvr-iptvsimple-9999/src/client.cpp
+--- kodi-pvr-iptvsimple-9999.orig/src/client.cpp	2015-12-21 02:02:12.642846491 +0100
++++ kodi-pvr-iptvsimple-9999/src/client.cpp	2015-12-21 02:02:44.928253670 +0100
+@@ -26,7 +26,7 @@
+ #include "kodi/xbmc_pvr_dll.h"
+ #include "kodi/libKODI_guilib.h"
+ #include "PVRIptvData.h"
+-#include "platform/util/util.h"
++#include <p8-platform/util/util.h>
+ 
+ using namespace ADDON;
+ 
+diff -ruN kodi-pvr-iptvsimple-9999.orig/src/PVRIptvData.cpp kodi-pvr-iptvsimple-9999/src/PVRIptvData.cpp
+--- kodi-pvr-iptvsimple-9999.orig/src/PVRIptvData.cpp	2015-12-21 02:02:12.642846491 +0100
++++ kodi-pvr-iptvsimple-9999/src/PVRIptvData.cpp	2015-12-21 02:03:25.625767165 +0100
+@@ -30,7 +30,7 @@
+ #include "zlib.h"
+ #include "rapidxml/rapidxml.hpp"
+ #include "PVRIptvData.h"
+-#include "platform/util/StringUtils.h"
++#include <p8-platform/util/StringUtils.h>
+ 
+ #define M3U_START_MARKER        "#EXTM3U"
+ #define M3U_INFO_MARKER         "#EXTINF"
+diff -ruN kodi-pvr-iptvsimple-9999.orig/src/PVRIptvData.h kodi-pvr-iptvsimple-9999/src/PVRIptvData.h
+--- kodi-pvr-iptvsimple-9999.orig/src/PVRIptvData.h	2015-12-21 02:02:12.642846491 +0100
++++ kodi-pvr-iptvsimple-9999/src/PVRIptvData.h	2015-12-21 02:03:07.129533762 +0100
+@@ -24,9 +24,9 @@
+  */
+ 
+ #include <vector>
+-#include "platform/util/StdString.h"
++#include <p8-platform/util/StdString.h>
+ #include "client.h"
+-#include "platform/threads/threads.h"
++#include <p8-platform/threads/threads.h>
+ 
+ struct PVRIptvEpgEntry
+ {
+@@ -81,7 +81,7 @@
+   std::string       strGenre;
+ };
+ 
+-class PVRIptvData : public PLATFORM::CThread
++class PVRIptvData : public P8PLATFORM::CThread
+ {
+ public:
+   PVRIptvData(void);
