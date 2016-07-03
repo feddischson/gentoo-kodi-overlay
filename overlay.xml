@@ -2,10 +2,10 @@
 <!DOCTYPE repositories SYSTEM "repositories.dtd">
 <repositories xmlns="" version="1.0">
   <repo quality="experimental" status="unofficial">
-    <name>gentoo-kodi-overlay-feddischson-fork</name>
+    <name>gentoo-kodi-overlay</name>
     <description>Kodi portage overlay with GIT ebuilds for Kodi, the Kodi platform lib and Kodi binary addons</description>
     <homepage>https://github.com/herrnst/gentoo-kodi-overlay/</homepage>
-    <source type="git">git://github.com/feddischson/gentoo-kodi-overlay.git</source>
+    <source type="git">git://github.com/herrnst/gentoo-kodi-overlay.git</source>
   </repo>
 </repositories>
 
