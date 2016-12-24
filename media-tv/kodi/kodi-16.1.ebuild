@@ -69,6 +69,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	media-fonts/corefonts
 	media-fonts/roboto
 	media-plugins/gst-plugins-mpeg2dec
+	media-libs/jasper
 	alsa? ( media-libs/alsa-lib )
 	media-libs/flac
 	media-libs/fontconfig
