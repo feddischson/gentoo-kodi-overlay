@@ -68,6 +68,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	dev-python/simplejson[${PYTHON_USEDEP}]
 	media-fonts/corefonts
 	media-fonts/roboto
+	media-plugins/gst-plugins-mpeg2dec
 	alsa? ( media-libs/alsa-lib )
 	media-libs/flac
 	media-libs/fontconfig
